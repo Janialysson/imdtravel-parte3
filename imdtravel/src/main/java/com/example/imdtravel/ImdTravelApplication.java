@@ -6,8 +6,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
 @SpringBootApplication
-public class ImdtravelApplication {
+public class ImdTravelApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ImdtravelApplication.class, args);
+        SpringApplication.run(ImdTravelApplication.class, args);
     }
 }
