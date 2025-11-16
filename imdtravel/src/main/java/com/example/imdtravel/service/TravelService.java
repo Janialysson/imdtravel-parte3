@@ -139,7 +139,7 @@ public class TravelService {
         }
 
 
-        // 3) REQUEST 3 — SELL com Timeout de 2s
+        // REQUEST 3 — SELL com Timeout de 2s
         Map<String, Object> sellResponse = null;
 
         try {
@@ -170,7 +170,7 @@ public class TravelService {
         }
 
 
-        // 5) Construção da Resposta Final
+        // Construção da Resposta Final
         Map<String, Object> response = new HashMap<>();
         response.put("flight", flight);
         response.put("day", day);
@@ -220,7 +220,7 @@ public class TravelService {
     }
 
     private Map<String, Object> callFlightService(String flight, String day) {
-        String url = "http://localhost:8083/flight?flight=" + encode(flight) + "&day=" + encode(day);
+        String url = "http://localhost:8081/flight?flight=" + encode(flight) + "&day=" + encode(day);
 
         try {
             return restTemplateDefault.getForObject(url, Map.class);
@@ -241,7 +241,7 @@ public class TravelService {
 
     // REQUEST 2 — Exchange com fallback (média das últimas 10 taxas)
     private Map<String, Object> callExchangeService(double valueUSD) {
-        String url = "http://localhost:8081/convert?value=" + valueUSD;
+        String url = "http://localhost:8082/convert?value=" + valueUSD;
         return restTemplateDefault.getForObject(url, Map.class);
     }
 
@@ -270,7 +270,7 @@ public class TravelService {
     // REQUEST 3 — SELL com timeout de 2 segundos (fail-fast)
     private Map<String, Object> callSellServiceWithTimeout(String flight, String user) {
 
-        String url = "http://localhost:8083/sell";
+        String url = "http://localhost:8081/sell";
 
         Map<String, Object> body = new HashMap<>();
         body.put("flight", flight);
@@ -295,7 +295,7 @@ public class TravelService {
 
     // REQUEST 4 — Envio de bônus ao Fidelity + fallback para fila offline
     private void callFidelityService(Map<String, Object> bonusReq) {
-        String url = "http://localhost:8082/bonus";
+        String url = "http://localhost:8083/bonus";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
