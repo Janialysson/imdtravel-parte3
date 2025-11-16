@@ -1,4 +1,4 @@
-# IMDTravel - Baseline (Parte 1.3) - Spring Boot
+# IMDTravel - Tolerancia a Falhas (Parte 1.3) - Spring Boot
 
 Projeto com 4 microserviços Spring Boot:
 - imdtravel (orquestrador) - porta 8084
