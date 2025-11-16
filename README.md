@@ -1,4 +1,4 @@
-# IMDTravel - Baseline (Parte 1.1) - Spring Boot
+# IMDTravel - Baseline (Parte 1.3) - Spring Boot
 
 Projeto com 4 microserviços Spring Boot:
 - imdtravel (orquestrador) - porta 8084
@@ -19,25 +19,33 @@ cd "C:\Users\User\Downloads\imdtravel_baseline_multistage\imdtravel_baseline_mul
    ```
 # Passo 3 — Rodar cada serviço manualmente (cada um em um terminal separado)
 Service: airlineshub (porta 8081)
+
     ```
     cd airlineshub
     mvn spring-boot:run
     ```
+    
 Service: exchange (porta 8082)
+
     ```
     cd exchange
     mvn spring-boot:run
     ```
+    
 Service: sell/fidelity (porta 8083)
+
     ```
     cd fidelity
     mvn spring-boot:run
     ```
+    
 Service: imdtravel (orquestrador – porta 8084)
+
     ```
     cd imdtravel
     mvn spring-boot:run
     ```
+    
 # Testando os serviços
   Testar AirlinesHub (GET – navegador ou Postman)
    ```
